@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Takvim</title>
+    <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+    <div class="calendar">
+        <div class="calendar-header">
+            <button id="prev">←</button>
+            <h2 id="monthYear"></h2>
+            <button id="next">→</button>
+        </div>
+        <div class="calendar-body">
+            <div class="day-names">
+                <div>Pzt</div>
+                <div>Sal</div>
+                <div>Çar</div>
+                <div>Per</div>
+                <div>Cum</div>
+                <div>Cmt</div>
+                <div>Paz</div>
+            </div>
+            <div class="days" id="days"></div>
+        </div>
+    </div>
+
+    <div id="popup" class="popup">
+        <div class="popup-content">
+            <div id="popup-date" class="popup-date"></div>
+            <div id="popup-time" class="popup-time"></div>
+            <div id="popup-holiday" class="popup-holiday"></div>
+            <div id="popup-notes" class="popup-notes">
+                <textarea id="notes-input" placeholder="Bugün ne yaptığınızı yazın..."></textarea>
+                <button id="save-notes">Notu Kaydet</button>
+            </div>
+            <div id="close-popup" class="close">×</div>
+        </div>
+    </div>
+
+    <div class="reminder-icon" id="reminderIcon">🔔</div>
+
+    <div class="reminder-popup" id="reminderPopup">
+        <div class="reminder-content">
+            <label for="reminderDate">Bir gün seçiniz (GG/AA/YY):</label>
+            <input type="text" id="reminderDate" placeholder="Örn: 03/07/25" maxlength="8" />
+            <label for="reminderName">Bu güne bir isim veriniz:</label>
+            <input type="text" id="reminderName" placeholder="Örn: Doktor Randevusu" />
+            <button id="saveReminder">Kaydet</button>
+            <div id="reminderClose" class="close">×</div>
+        </div>
+    </div>
+
+    <button id="showAllNotes" class="all-notes-button">Tüm Notları Göster</button>
+
+    <div id="allNotesPopup" class="popup-overlay" style="display: none;">
+        <div class="popup-content">
+            <span id="closeAllNotesPopup" class="close-btn">×</span>
+            <h2>Kayıtlı Tüm Notlar</h2>
+            <div id="allNotesList"></div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
